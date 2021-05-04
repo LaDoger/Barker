@@ -6,8 +6,9 @@ interface IBarker {
     function content() external view returns (string memory);
     function claimableTips() external view returns (uint256);
     function claimTips() external;
-    event Bark(address author, address replyingTo, string content, uint tips);
-    event Claimed(address author, address claimer, uint amount);
+    event Bark(address author, address replyingTo, string content, uint256 tips);
+    event Claimed(address author, address claimer, uint256 amount);
+    event TipReceived(address thisBark, address tipper, uint256 amount);
 }
 
 contract Barker is IBarker {
@@ -50,5 +51,7 @@ contract Barker is IBarker {
         emit Claimed(_author, msg.sender, _amount);
     }
     
-    receive() external payable { }
+    receive() external payable {
+        emit TipReceived(address(this), msg.sender, msg.value);
+    }
 }
