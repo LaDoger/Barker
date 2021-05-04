@@ -6,14 +6,14 @@ interface IBarker {
     function content() external view returns (string memory);
     function claimableTips() external view returns (uint256);
     function claimTips() external;
-    event Bark(address author, address rebarkingTo, string content, uint256 tips);
+    event Bark(address author, address rebarkTo, string content, uint256 tips);
     event Claimed(address author, address claimer, uint256 amount);
     event TipReceived(address thisBark, address tipper, uint256 amount);
 }
 
 contract Barker is IBarker {
     address payable private _author;
-    address payable private _rebarkingTo;
+    address payable private _rebarkTo;
     string private _content;
     
     constructor(address payable rebarkTo_, string memory content_) payable {
