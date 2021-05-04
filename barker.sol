@@ -16,15 +16,15 @@ contract Barker is IBarker {
     address payable private _rebarkingTo;
     string private _content;
     
-    constructor(address payable rebarkingTo_, string memory content_) payable {
+    constructor(address payable rebarkTo_, string memory content_) payable {
         _author = payable(msg.sender);
-        _rebarkingTo = rebarkingTo_;
+        _rebarkTo = rebarkTo_;
         _content = content_;
         
         // Send tip when rebarking (optional).
-        _rebarkingTo.transfer(msg.value);
+        _rebarkTo.transfer(msg.value);
 
-        emit Bark(_author, _rebarkingTo, _content, msg.value);
+        emit Bark(_author, _rebarkTo, _content, msg.value);
     }
 
     function author() public view override returns (address) {
@@ -32,7 +32,7 @@ contract Barker is IBarker {
     }
     
     function rebarkTo() public view override returns (address) {
-        return _rebarkingTo;
+        return _rebarkTo;
     }
 
     function content() public view override returns (string memory) {
