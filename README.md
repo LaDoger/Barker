@@ -1,5 +1,5 @@
 # Barker
-Like twitter but on EVM.
+Like twitter but on **EVM** (Ethereum Virtual Machine).
 
 One can **bark** and **rebark** to other barks while sending a tip (optional). The tips can be collected by/for the ~~barker~~ author.
 
