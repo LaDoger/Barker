@@ -35,7 +35,7 @@ contract Barker is IBarker {
     }
     
     function transferOwnership(address payable newOwner) public override {
-        require(msg.sender == owner, "Only the current owner can call this function.");
+        require(msg.sender == owner, "Only the owner can call this function.");
         emit OwnerChanged(owner, newOwner);
         owner = newOwner;
     }
