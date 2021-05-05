@@ -6,6 +6,7 @@ interface IBarker {
     event Bark(address author, address barkingToWhom, string content, uint256 tip);
     event TipReceived(address thisBark, address tipper, uint256 amount);
     event TipsCollected(address owner, address collector, uint256 amount);
+    event OwnerChanged(address previousOwner, address newOwner);
 }
 
 contract Barker is IBarker {
@@ -35,6 +36,7 @@ contract Barker is IBarker {
     
     function transferOwnership(address payable newOwner) public override {
         require(msg.sender == owner, "Only the current owner can call this function.");
+        emit OwnerChanged(owner, newOwner);
         owner = newOwner;
     }
 }
