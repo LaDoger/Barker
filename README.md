@@ -5,4 +5,6 @@ One can **bark** and **rebark** to other barks while sending a tip (optional). T
 
 Each bark is a ***smart contract*** of its own, containing independnt content, and pointing to the previous bark. The **bark chain** can be traced all the way back to the **genesis bark**, forming a thread.
 
+(Planning to add ownership systems so that barks can be traded like NFTs.)
+
 Due to the immutable nature of blockchains, no bark can be censored.
