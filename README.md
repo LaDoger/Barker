@@ -1,10 +1,8 @@
 # Barker
 Like twitter but on **EVM** (Ethereum Virtual Machine).
 
-One can **bark** and **rebark** to other barks while sending a tip (optional). The tips can be used as an indicator for display priorities, and can be collected by/for the ~~barker~~ author.
+One can **bark** or **rebark** to other barks. Each bark is a ***smart contract*** of its own, containing text, and pointing to another bark. We can trace barks all the way back to the **genesis bark**, forming a thread, which we call a **bark chain**.
 
-Each bark is a ***smart contract*** of its own, containing independnt content, and pointing to the previous bark. The **bark chain** can be traced all the way back to the **genesis bark**, forming a thread.
-
-(Planning to add ownership systems so that barks can be traded like NFTs.)
+A bark can receive tips, which can then be **collected** by the bark **owner**. The bark **owner** is by default the **author** of the bark, but ownership can be transferred. Barks with future tip-earning potential can thus become an NFT-like investment.
 
 Due to the immutable nature of blockchains, no bark can be censored.
