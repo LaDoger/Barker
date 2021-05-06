@@ -98,6 +98,15 @@
   function onload() {
   var url = 'https://api-ropsten.etherscan.io/api?module=logs&action=getLogs&fromBlock=1&toBlock=latest&address=0x8fbe9B93740C1652e29046fa6959f16cE91501A5&apikey=2XE9BWCRVY4IVZUPATS95YI5UXMRQCEWS9';
   
+  // Convert Hex to String, used on Bark contents.
+  function hex2a(hexx) {
+    var hex = hexx.toString();
+    var str = '';
+    for (var i = 0; (i < hex.length && hex.substr(i, 2) !== '00'); i += 2)
+        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    return str;
+  }
+  
   fetch(url)
     .then(function(response) {
       return response.json();
@@ -106,11 +115,12 @@
       console.log(data)
       console.log(data.result)
       console.log(data.result[0])
-      
-      // Author address (Hex for now, not converted to address yet)
-      document.getElementById('authorOfThisBark').innerHTML = data.result[0].data.slice(2, 66);
-      // Content (Hex for now, not converted to string yet)
-      document.getElementById('contentOfThisBark').innerHTML = data.result[0].data.slice(322, 386);
+	  
+	  // Fill in author address of this Bark.
+      document.getElementById('authorOfThisBark').innerHTML = "0x" + data.result[0].data.slice(24, 66);
+	  
+	  // Fill in content of this Bark.
+      document.getElementById('contentOfThisBark').innerHTML = hex2a(data.result[0].data.slice(322, 386));
     })
 	.catch(function(error) {
       console.log('error')
