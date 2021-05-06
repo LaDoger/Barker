@@ -34,7 +34,7 @@
         padding: 10px 0px 10px 0px;
         margin: 0px auto;
         min-height: 90px;
-        max-width: 480px;
+        max-width: 600px;
         color: black;
         text-align: left;
         font-size: 24px;
@@ -96,7 +96,11 @@
   
   <script>
   function onload() {
-  var url = 'https://api-ropsten.etherscan.io/api?module=logs&action=getLogs&fromBlock=1&toBlock=latest&address=0x8fbe9B93740C1652e29046fa6959f16cE91501A5&apikey=2XE9BWCRVY4IVZUPATS95YI5UXMRQCEWS9';
+  
+  var barkAddress = '0x8fbe9B93740C1652e29046fa6959f16cE91501A5';
+  var etherscanAPIKey = '2XE9BWCRVY4IVZUPATS95YI5UXMRQCEWS9';
+  var url = 'https://api-ropsten.etherscan.io/api?module=logs&action=getLogs&fromBlock=1&toBlock=latest&address='
+    + barkAddress + '&apikey=' + etherscanAPIKey;
   
   // Convert Hex to String, used on Bark contents.
   function hex2a(hexx) {
@@ -116,10 +120,10 @@
       console.log(data.result)
       console.log(data.result[0])
 	  
-      // Fill in author address of this Bark. "data.result[0]" refers to the Bark() event log.
-      document.getElementById('authorOfThisBark').innerHTML = "0x" + data.result[0].data.slice(24, 66);
+	  // Fill in author address of this Bark. "data.result[0]" refers to the Bark() event log.
+      document.getElementById('authorOfThisBark').innerHTML = "0x" + data.result[0].data.slice(26, 66);
 	  
-      // Fill in content of this Bark.
+	  // Fill in content of this Bark.
       document.getElementById('contentOfThisBark').innerHTML = hex2a(data.result[0].data.slice(322, 386));
     })
 	.catch(function(error) {
