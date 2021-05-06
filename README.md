@@ -1,5 +1,5 @@
 # Barker
-Like twitter but on **EVM** (Ethereum Virtual Machine).
+Like twitter but on **EVM** (*Ethereum Virtual Machine*).
 
 One can **bark** or **rebark** to other barks. Each bark is a ***smart contract*** of its own, containing text, and pointing to another bark. We can trace barks all the way back to the **genesis bark**, forming a thread, which we call a **barkchain**.
 
