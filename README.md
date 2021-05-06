@@ -7,6 +7,6 @@ One can **bark** or **rebark** to other barks. Each bark is a ***smart contract*
 
 A bark can receive **tips**, which can then be **collected** by the bark **owner**. The bark **owner** is by default the **author** of the bark, but ownership can be **transferred**. Barks with future tip-earning potential can thus become an NFT-like investment.
 
-Users can view and access the **barkchain** via a **barkchain explorer**, a web interface with a built-in Ethereum wallet to do **barks** and **tips** easily.
+Users can view and access the **barkchain** via a **barkchain explorer**, a web interface with a built-in Ethereum wallet to do **barks** and **tips** easily. ~~(Hard, need help!)~~
 
 Due to the permissionless and immutable nature of blockchains, no bark can be censored.
