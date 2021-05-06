@@ -9,4 +9,4 @@ A bark can receive **tips**, which can then be **collected** by the bark **owner
 
 Users can view and access the **barkchain** via a **barkchain explorer**, a web interface with a built-in Ethereum wallet to do **barks** and **tips** easily.
 
-Due to the immutable nature of blockchains, no bark can be censored.
+Due to the permissionless and immutable nature of blockchains, no bark can be censored.
