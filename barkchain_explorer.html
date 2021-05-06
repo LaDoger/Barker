@@ -20,11 +20,19 @@
       hr {
         border: 1px solid black;
       }
+	  
+	  .verticalLine {
+        border: 0px;
+	    width: 2px;
+		background-color: black;
+	    height: 20px;
+		margin: 0px, 0px;
+	  }
       
       .bark {
         border: 2px solid black;
         padding: 10px 0px 10px 0px;
-        margin: 20px auto;
+        margin: 0px auto;
         min-height: 90px;
         max-width: 480px;
         color: black;
@@ -48,14 +56,15 @@
     <nav>
       <em>Barker!</em>
     </nav>
-    <hr>
+	<hr>
+	<hr class="verticalLine">
     <div class="bark" id="barkingToWhom">
       <div align="center"><b>barking to whom</b></div>
       <hr>
       <div>(author)</div>
       <div>(content)</div>
     </div>
-    
+	<hr class="verticalLine">
     <div class="bark" id="thisBark">
       <div align="center"><b>this bark</b></div>
       <hr>
@@ -64,7 +73,7 @@
       <hr>
       <div>(bark back!)</div>
     </div>
-    
+	<hr class="verticalLine">
     <div class="bark" id="replies">
       <div align="center"><b>replies</b></div>
       <hr>
