@@ -116,10 +116,10 @@
       console.log(data.result)
       console.log(data.result[0])
 	  
-	  // Fill in author address of this Bark.
+      // Fill in author address of this Bark. "data.result[0]" refers to the Bark() event log.
       document.getElementById('authorOfThisBark').innerHTML = "0x" + data.result[0].data.slice(24, 66);
 	  
-	  // Fill in content of this Bark.
+      // Fill in content of this Bark.
       document.getElementById('contentOfThisBark').innerHTML = hex2a(data.result[0].data.slice(322, 386));
     })
 	.catch(function(error) {
