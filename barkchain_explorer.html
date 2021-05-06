@@ -34,7 +34,7 @@
         padding: 10px 0px 10px 0px;
         margin: 0px auto;
         min-height: 90px;
-        max-width: 480px;
+        max-width: 600px;
         color: black;
         text-align: left;
         font-size: 24px;
@@ -52,30 +52,30 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="onload()">
     <nav>
       <em>Barker!</em>
     </nav>
     <hr>
     <hr class="verticalLine">
-    <div class="bark" id="barkingToWhom">
-      <div align="center"><b>barking to whom</b></div>
+    <div class="bark" id="theBarkWhichGotBarkedAt">
+      <div align="center"><b>The Bark which got Barked at</b></div>
       <hr>
-      <div id="authorWhoGotBarkedAt">(author who got barked at)</div>
-      <div>(content)</div>
+      <div id="authorWhoGotBarkedAt">(the author who got barked at)</div>
+      <div id="contentWhichGotBarkedAt">(the content which got Barked at)</div>
     </div>
     <hr class="verticalLine">
     <div class="bark" id="thisBark">
-      <div align="center"><b>this bark</b></div>
+      <div align="center"><b>This Bark</b></div>
       <hr>
-      <div>(author)</div>
-      <div>(content)</div>
+      <div id="authorOfThisBark">(author of this Bark)</div>
+      <div id="contentOfThisBark">(content of this Bark)</div>
       <hr>
-      <div>(bark back!)</div>
+      <div>(Bark at this Bark!)</div>
     </div>
     <hr class="verticalLine">
-    <div class="bark" id="replies">
-      <div align="center"><b>replies</b></div>
+    <div class="bark" id="repliesToThisBark">
+      <div align="center"><b>Replies to this Bark</b></div>
       <hr>
       <div>(author1)</div>
       <div>(content1)</div>
