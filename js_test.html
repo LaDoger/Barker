@@ -115,18 +115,18 @@
     .then(function(response) {
       return response.json();
     })
-	.then(function(data) {
+    .then(function(data) {
       console.log(data)
       console.log(data.result)
       console.log(data.result[0])
-	  
-	  // Fill in author address of this Bark. "data.result[0]" refers to the Bark() event log.
+      
+      // Fill in author address of this Bark. "data.result[0]" refers to the Bark() event log.
       document.getElementById('authorOfThisBark').innerHTML = "0x" + data.result[0].data.slice(26, 66);
-	  
-	  // Fill in content of this Bark.
+      
+      // Fill in content of this Bark.
       document.getElementById('contentOfThisBark').innerHTML = hex2a(data.result[0].data.slice(322, 386));
     })
-	.catch(function(error) {
+    .catch(function(error) {
       console.log('error')
       console.log(error)
     });
