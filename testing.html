@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>barkchain explorer</title>
+    <style>
+      * {
+        background-color: white;
+      }
+      
+      nav {
+        padding: 0px 0px 15px 0px;
+        height: 72px;
+        color: black;
+        text-align: center;
+        font-size: 72px;
+        font-family: System,monospace;
+        white-space: normal;
+      }
+      
+      hr {
+        border: 1px solid black;
+      }
+      
+      .verticalLine {
+        border: 0px;
+        width: 2px;
+        background-color: black;
+        height: 20px;
+        margin: 0px, 0px;
+      }
+      
+      .bark {
+        border: 2px solid black;
+        padding: 10px 0px 10px 0px;
+        margin: 0px auto;
+        min-height: 90px;
+        max-width: 480px;
+        color: black;
+        text-align: left;
+        font-size: 24px;
+        font-family: System,monospace;
+        white-space: normal;
+        word-wrap: break-word;
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: black;
+      }
+    </style>
+  </head>
+  <body onload="onload()">
+    <nav>
+      <em>Barker!</em>
+    </nav>
+    <hr>
+    <hr class="verticalLine">
+    <div class="bark" id="barkingToWhom">
+      <div align="center"><b>barking to whom</b></div>
+      <hr>
+      <div id="authorWhoGotBarkedAt">(author who got barked at)</div>
+      <div>(content)</div>
+    </div>
+    <hr class="verticalLine">
+    <div class="bark" id="thisBark">
+      <div align="center"><b>this bark</b></div>
+      <hr>
+      <div>(author)</div>
+      <div>(content)</div>
+      <hr>
+      <div>(bark back!)</div>
+    </div>
+    <hr class="verticalLine">
+    <div class="bark" id="replies">
+      <div align="center"><b>replies</b></div>
+      <hr>
+      <div>(author1)</div>
+      <div>(content1)</div>
+      <hr>
+      <div>(author2)</div>
+      <div>(content2)</div>
+      <hr>
+      <div>(author3)</div>
+      <div>(content3)</div>
+      <hr>
+      <div>(author4)</div>
+      <div>(content4)</div>
+      <hr>
+      <div>(author5)</div>
+      <div>(content5)</div>
+    </div>
+  </body>
+  
+  <script>
+  function onload() {
+  
+  fetch('https://api-ropsten.etherscan.io/api?module=logs&action=getLogs&fromBlock=1&toBlock=latest&address=0x8fbe9B93740C1652e29046fa6959f16cE91501A5&apikey=2XE9BWCRVY4IVZUPATS95YI5UXMRQCEWS9')
+.then(function(response) {
+  return response.json();
+}).then(function(data) {
+  console.log(data)
+  console.log(data.result)
+  console.log(data.result[0])
+  document.getElementById('authorWhoGotBarkedAt').innerHTML = data.result[0].gasPrice;
+}).catch(function(error) {
+  console.log('error')
+  console.log(error)
+});
+
+  }
+  
+  </script>
+</html>
