@@ -69,9 +69,9 @@
       <div align="center"><b>This Bark</b></div>
       <hr>
       <div id="authorOfThisBark">(author of this Bark)</div>
-      <div id="ContentOfThisBark">(content of this Bark)</div>
+      <div id="contentOfThisBark">(content of this Bark)</div>
       <hr>
-      <div>(Bark back!)</div>
+      <div>(Bark to this Bark!)</div>
     </div>
     <hr class="verticalLine">
     <div class="bark" id="repliesToThisBark">
@@ -96,20 +96,26 @@
   
   <script>
   function onload() {
+  var url = 'https://api-ropsten.etherscan.io/api?module=logs&action=getLogs&fromBlock=1&toBlock=latest&address=0x8fbe9B93740C1652e29046fa6959f16cE91501A5&apikey=2XE9BWCRVY4IVZUPATS95YI5UXMRQCEWS9';
   
-  fetch('https://api-ropsten.etherscan.io/api?module=logs&action=getLogs&fromBlock=1&toBlock=latest&address=0x8fbe9B93740C1652e29046fa6959f16cE91501A5&apikey=2XE9BWCRVY4IVZUPATS95YI5UXMRQCEWS9')
-.then(function(response) {
-  return response.json();
-}).then(function(data) {
-  console.log(data)
-  console.log(data.result)
-  console.log(data.result[0])
-  document.getElementById('authorWhoGotBarkedAt').innerHTML = data.result[0].gasPrice;
-}).catch(function(error) {
-  console.log('error')
-  console.log(error)
-});
-
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+	.then(function(data) {
+      console.log(data)
+      console.log(data.result)
+      console.log(data.result[0])
+      
+      // Author address (Hex for now, not converted to address yet)
+      document.getElementById('authorOfThisBark').innerHTML = data.result[0].data.slice(2, 66);
+      // Content (Hex for now, not converted to string yet)
+      document.getElementById('contentOfThisBark').innerHTML = data.result[0].data.slice(322, 386);
+    })
+	.catch(function(error) {
+      console.log('error')
+      console.log(error)
+    });
   }
   
   </script>
