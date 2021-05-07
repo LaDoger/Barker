@@ -19,7 +19,9 @@ function onload() {
     })
     .then(function(data) {
       // Fill in author address of this Bark. "data.result[0]" refers to the Bark() event log.
-      document.getElementById('authorOfThisBark').innerHTML = "0x" + data.result[0].data.slice(26, 66);
+	  var addressOfAuthorOfThisBark = "0x" + data.result[0].data.slice(26, 66);
+	  var abridgedAddressOfAuthorOfThisBark = addressOfAuthorOfThisBark.slice(0, 6) + "..." + addressOfAuthorOfThisBark.slice(-5, -1);
+      document.getElementById('authorOfThisBark').innerHTML = abridgedAddressOfAuthorOfThisBark;
       
       // Fill in content of this Bark.
       document.getElementById('contentOfThisBark').innerHTML = hex2a(data.result[0].data.slice(322, 386));
@@ -33,7 +35,9 @@ function onload() {
             return response2.json();
           })
           .then(function(data2) {
-            document.getElementById('authorWhoGotBarkedAt').innerHTML = "0x" + data2.result[0].data.slice(26, 66);
+	        var addressOfAuthorOfThatBark = "0x" + data2.result[0].data.slice(26, 66);
+            var abridgedAddressOfAuthorOfThatBark = addressOfAuthorOfThatBark.slice(0, 6) + "..." + addressOfAuthorOfThatBark.slice(-5, -1);
+            document.getElementById('authorWhoGotBarkedAt').innerHTML = abridgedAddressOfAuthorOfThatBark;
             document.getElementById('contentWhichGotBarkedAt').innerHTML = hex2a(data2.result[0].data.slice(322, 386));
           });
     });
