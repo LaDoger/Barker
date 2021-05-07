@@ -9,7 +9,7 @@ function onload() {
     var hex = hexx.toString();
     var str = '';
     for (var i = 0; (i < hex.length && hex.substr(i, 2) !== '00'); i += 2)
-        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+      str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
     return str;
   }
   
@@ -19,8 +19,8 @@ function onload() {
     })
     .then(function(data) {
       // Fill in author address of this Bark. "data.result[0]" refers to the Bark() event log.
-	  var addressOfAuthorOfThisBark = "0x" + data.result[0].data.slice(26, 66);
-	  var abridgedAddressOfAuthorOfThisBark = addressOfAuthorOfThisBark.slice(0, 6) + "..." + addressOfAuthorOfThisBark.slice(-5, -1);
+      var addressOfAuthorOfThisBark = "0x" + data.result[0].data.slice(26, 66);
+      var abridgedAddressOfAuthorOfThisBark = addressOfAuthorOfThisBark.slice(0, 6) + "..." + addressOfAuthorOfThisBark.slice(-5, -1);
       document.getElementById('authorOfThisBark').innerHTML = abridgedAddressOfAuthorOfThisBark;
       
       // Fill in content of this Bark.
@@ -35,7 +35,7 @@ function onload() {
             return response2.json();
           })
           .then(function(data2) {
-	        var addressOfAuthorOfThatBark = "0x" + data2.result[0].data.slice(26, 66);
+            var addressOfAuthorOfThatBark = "0x" + data2.result[0].data.slice(26, 66);
             var abridgedAddressOfAuthorOfThatBark = addressOfAuthorOfThatBark.slice(0, 6) + "..." + addressOfAuthorOfThatBark.slice(-5, -1);
             document.getElementById('authorWhoGotBarkedAt').innerHTML = abridgedAddressOfAuthorOfThatBark;
             document.getElementById('contentWhichGotBarkedAt').innerHTML = hex2a(data2.result[0].data.slice(322, 386));
