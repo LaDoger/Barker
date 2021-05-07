@@ -49,8 +49,6 @@ input {
 
 #barkBack {
   width: calc(100% - 255px);
-  /*min-width: 465px; */
-  
 }
 
 #sendTip {
