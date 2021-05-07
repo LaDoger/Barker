@@ -3,12 +3,13 @@ function onload() {
 }
 
 function fill() {
+	// Fill in all bark content.
     var addressOfThisBark;
     var addressOfTheBarkWhichGotBarkedAt;
     var unsortedBarkList = [];
     var addressesOfBarksBarkingAtThisBark = [];
     
-    // Fill in "This Bark" and assign values for addressOfTheBarkWhichGotBarkedAt and unsortedBarkList.
+    // Fill in "This Bark", and assign values for addressOfTheBarkWhichGotBarkedAt and unsortedBarkList.
     [addressOfTheBarkWhichGotBarkedAt, unsortedBarkList] = fillThisBark(addressOfThisBark);
     
     // Fill in "The Bark which got Barked at".
