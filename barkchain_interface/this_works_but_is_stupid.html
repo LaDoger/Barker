@@ -133,13 +133,8 @@
           .then(function(data2) {
             document.getElementById('authorWhoGotBarkedAt').innerHTML = "0x" + data2.result[0].data.slice(26, 66);
             document.getElementById('contentWhichGotBarkedAt').innerHTML = hex2a(data2.result[0].data.slice(322, 386));
-          })
-          .catch(function(error2) {
-        });
-    })
-    .catch(function(error) {
+          });
     });
   }
-  
   </script>
 </html>
