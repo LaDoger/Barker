@@ -75,7 +75,7 @@ function hexToText(hexx) {
   return str;
 }
 
-// Not sure if this works yet.
+// Not sure if this works.
 function fetchEventLogs(smartContractAddress, etherscanAPIKey) {
   // Get event logs of a smart contract using the etherscan API.
   // Returns an the "data" object from the API.
@@ -88,13 +88,13 @@ function fetchEventLogs(smartContractAddress, etherscanAPIKey) {
       return response.json();
     })
     .then(function(data) {
-	  eventLogData = data;
+	  eventLogData = data.results;
     });
 
   return eventLogData;
 }
 
-// Not sure if this works yet.
+
 function abridgedAddress(address) {
   // Returns an abridged version of an ethereum address (or any other 0x.... hash).
   // Return format "0x0000...0000"

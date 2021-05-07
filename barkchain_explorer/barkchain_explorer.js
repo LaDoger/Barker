@@ -18,7 +18,7 @@ function onload() {
   var etherscanAPIKey = '2XE9BWCRVY4IVZUPATS95YI5UXMRQCEWS9';
   var url = 'https://api-ropsten.etherscan.io/api?module=logs&action=getLogs&fromBlock=1&toBlock=latest&address='
     + barkAddress + '&apikey=' + etherscanAPIKey;
-  
+
   fetch(url)
     .then(function(response) {
       return response.json();
